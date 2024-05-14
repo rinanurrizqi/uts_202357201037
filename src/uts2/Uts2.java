@@ -15,6 +15,21 @@ public class Uts2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println(bestFriend("he headed to the store", 'h', 'e'));//True
+        System.out.println(bestFriend("abcdee", 'e', 'e'));//False
+        
+        System.out.println(bestFriend("abacaba", 'a', 'b'));//False
+        System.out.println(bestFriend("ab", 'a', 'b'));//True
+    }
+    public static boolean bestFriend(String str, char a, char b){
+        for (int i=0; i<str.length(); i++){
+            if (str.charAt(i)==a){
+                if (i==str.length()-1 ||str.charAt(i+1)!=b){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
     
 }
