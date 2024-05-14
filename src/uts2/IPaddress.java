@@ -19,4 +19,12 @@ public class IPaddress {
         int end = ipToInt(endIP);
         return end - start;
     }
+    private static int ipToInt(String ipAddress){
+        String[]parts = ipAddress.split("\\.");
+        int result = 0;
+        for(int i=0; i<4; i++){
+            result|= Integer.parseInt(parts[i]) << (24 - (8*i));
+                }
+                return result;
+    }
 }
