@@ -14,8 +14,15 @@ public class shortestword {
         int shortestLength = findShortestWordLength(input);
         System.out.println("The length of the shortest word is: " + shortestLength);
     }
-    public static int findShortestWordLegth(String str){
-        String words = str.split("");
-        int minLength = 
+    public static int findShortestWordLength(String str){
+        String[] words = str.split("");
+        int minLength = Integer.MAX_VALUE;
+        
+        for(String word : words){
+            if(word.length()<minLength){
+                minLength = word.length();
+            }
+        }
+        return minLength;
     }
 }
